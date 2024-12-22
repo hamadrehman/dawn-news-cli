@@ -27,6 +27,7 @@ func GetNews() Feed {
 		log.Fatal(err)
 	}
 	xmlBytes, err := io.ReadAll(resp.Body)
+	defer resp.Body.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
